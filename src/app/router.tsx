@@ -17,21 +17,21 @@ export const router = createBrowserRouter([
 		),
 		children: [
 			{
-				path: APP_ROUTES.HOME,
-				element: <HomePage />,
-			},
-			{
 				element: <AuthGuard />,
 				children: [
 					{
-						path: APP_ROUTES.SIGN_UP,
-						element: <SignupPage />,
-					},
-					{
-						path: APP_ROUTES.SIGN_IN,
-						element: <SigninPage />,
+						path: APP_ROUTES.HOME,
+						element: <HomePage />,
 					},
 				],
+			},
+			{
+				path: APP_ROUTES.SIGN_UP,
+				element: <SignupPage />,
+			},
+			{
+				path: APP_ROUTES.SIGN_IN,
+				element: <SigninPage />,
 			},
 		],
 	},

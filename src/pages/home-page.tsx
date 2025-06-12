@@ -1,5 +1,3 @@
-import { Navigate } from 'react-router-dom'
-import { APP_ROUTES } from '../common/consts'
 import { useAppDispatch } from '../common/hooks/redux-hooks'
 import { useAuth } from '../common/hooks/use-auth'
 import { removeUser } from '../store/slices/user-slice'
@@ -7,11 +5,7 @@ import { removeUser } from '../store/slices/user-slice'
 export function HomePage() {
 	const dispatch = useAppDispatch()
 
-	const { isAuth, email } = useAuth()
-
-	if (!isAuth) {
-		return <Navigate to={APP_ROUTES.SIGN_IN} />
-	}
+	const { email } = useAuth()
 
 	return (
 		<div className='pt-[50px]'>
