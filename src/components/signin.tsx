@@ -1,4 +1,5 @@
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth'
+import toast from 'react-hot-toast'
 import { useNavigate } from 'react-router-dom'
 import { APP_ROUTES } from '../common/consts'
 import { useAppDispatch } from '../common/hooks/redux-hooks'
@@ -22,8 +23,9 @@ export function Signin() {
 				)
 
 				navigate(APP_ROUTES.HOME)
+				toast.success('Logged in successfully')
 			})
-			.catch(console.error)
+			.catch(() => toast.error('Error during authorization'))
 	}
 
 	return <Form title={'Sign In'} submitFn={handleLogin} />

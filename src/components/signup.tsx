@@ -5,6 +5,7 @@ import { useAppDispatch } from '../common/hooks/redux-hooks'
 import { auth } from '../common/lib/firebase'
 import { setUser } from '../store/slices/user-slice'
 import { Form } from './form'
+import toast from 'react-hot-toast'
 
 export function Signup() {
 	const navigate = useNavigate()
@@ -22,8 +23,9 @@ export function Signup() {
 				)
 
 				navigate(APP_ROUTES.HOME)
+				toast.success('Successfully registered')
 			})
-			.catch(console.error)
+			.catch(() => toast.error('Error during registration'))
 	}
 
 	return <Form title={'Sign Up'} submitFn={handleRegister} />
