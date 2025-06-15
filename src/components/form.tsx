@@ -35,12 +35,8 @@ export function Form({
 				placeholder='Password'
 				required
 			/>
-			{/* {loginError && (
-					<p className='bg-rose-400 text-white p-3 rounded'>{loginError}</p>
-				)} */}
 			<button
 				type={'submit'}
-				// disabled={isLoading}
 				className='p-5 text-xl font-medium rounded bg-teal-500 text-white cursor-pointer disabled:bg-teal-300 mb-2'
 			>
 				Submit
